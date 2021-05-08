@@ -13,7 +13,7 @@ class PhongMaterial extends Material{
         }else{
             //console.log(color)
             super({
-                'uTextureSample':{type:'1i1',value:textureSample},
+                'uTextureSample':{type:'1i',value:textureSample},
                 'uKd':{type:'3fv',value:color},
                 "uKs":{type:'3fv',value:specular},
                 'uLightIntensity':{type:'1f',value:intensity}
