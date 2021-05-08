@@ -133,7 +133,7 @@ void main(void){
   vec3 viewDir = normalize(uCameraPos - vFragPos);
   float spec = 0.0;
   vec3 reflectDir = reflect(-lightDir,normal);
-  spec = pow(max(dot(view,reflectDir),0),35);
+  spec = pow(max(dot(view,reflectDir),0.0),35.0);
   vec3 specular = uKs*light_atten_coff * spec;
   gl_FragColor = vec4(pow((ambient + diffuse + specular),vec3(1.0/2.2)),1.0);
 }
