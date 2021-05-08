@@ -15,7 +15,7 @@ class PhongMaterial extends Material{
             super({
                 'uTextureSample':{type:'1i2',value:textureSample},
                 'uKd':{type:'3fv',value:color},
-                "uKs":{type:'3fv',value:spe1cular},
+                "uKs":{type:'3fv',value:specular},
                 'uLightIntensity':{type:'1f',value:intensity}
             },[],PhongVertexShader,PhongFragmentShader);
         }
