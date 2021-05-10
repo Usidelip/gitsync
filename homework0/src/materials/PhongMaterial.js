@@ -12,13 +12,16 @@ class PhongMaterial extends Material{
                 'uLightIntensity':{type:'1f',value:intensity}
             },[],PhongVertexShader,PhongFragmentShader);
         }else{
-            console.log(1)
+            console.log("asdfasdf"+color+"-------"+colorMap+"......."+color)
+            
             super({
                 'uTextureSample':{type:'1i',value:textureSample},
                 'uKd':{type:'3fv',value:color},
                 'uKs':{type:'3fv',value:specular},
                 'uLightIntensity':{type:'1f',value:intensity}
             },[],PhongVertexShader,PhongFragmentShader);
+
+            console.log(2)
         }
     }
 

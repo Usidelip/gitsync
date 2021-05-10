@@ -4,7 +4,7 @@ class Shader {
         this.gl = gl;
         const vs = this.compileShader(vsSrc, gl.VERTEX_SHADER);
         const fs = this.compileShader(fsSrc, gl.FRAGMENT_SHADER);
-      
+
         this.program = this.addShaderLocations({
             glShaderProgram: this.linkShader(vs, fs),
         }, shaderLocations);
@@ -18,7 +18,7 @@ class Shader {
 
         if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
             console.error(shaderSource);
-            console.error(('shader compiler error:\n' + gl.getShaderInfoLog(shader)));
+            console.error('shader compiler error:\n' + gl.getShaderInfoLog(shader));
         }
 
         return shader;
@@ -47,7 +47,6 @@ class Shader {
                 result.uniforms = Object.assign(result.uniforms, {
                     [shaderLocations.uniforms[i]]: gl.getUniformLocation(result.glShaderProgram, shaderLocations.uniforms[i]),
                 });
-                //console.log(gl.getUniformLocation(result.glShaderProgram, 'uKd'));
             }
         }
         if (shaderLocations && shaderLocations.attribs && shaderLocations.attribs.length) {
@@ -57,7 +56,7 @@ class Shader {
                 });
             }
         }
-        
+
         return result;
     }
 }
